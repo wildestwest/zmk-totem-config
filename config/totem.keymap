@@ -58,6 +58,16 @@
             key-positions = <15 5>;
             timeout-ms = <100>;
         };
+
+        bll {
+            bindings = <&bootloader>;
+            key-positions = <0 21 25 4>;
+        };
+
+        blr {
+            bindings = <&bootloader>;
+            key-positions = <5 9 30 26>;
+        };
     };
 
     macros {
@@ -140,20 +150,20 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q    &kp Y      &kp O         &kp U     &kp EQUAL      &kp X      &kp L     &kp D         &kp W  &kp Z
-       &kp C    &kp I      &kp A         &kp E     &kp MINUS      &kp K      &kp H     &kp T         &kp N  &kp S
-&kp B  &kp SQT  &kp COMMA  &kp DOT       &kp SEMI  &kp FSLH       &kp J      &kp M     &kp G         &kp P  &kp V  &kp F
-                           &kp LEFT_GUI  &kp TAB   &lt 2 SPACE    &lt 3 RET  &kp BSPC  &kp LEFT_ALT
+       &kp Q    &kp Y      &kp O           &kp U        &kp EQUAL      &kp X    &kp L            &kp D            &kp W  &kp Z
+       &kp C    &kp I      &kp A           &kp E        &kp MINUS      &kp K    &kp H            &kp T            &kp N  &kp S
+&kp B  &kp SQT  &kp COMMA  &kp DOT         &kp SEMI     &kp FSLH       &kp J    &kp M            &kp G            &kp P  &kp V  &kp F
+                           &sk LEFT_SHIFT  &lt 5 ENTER  &lt 2 SPACE    &lt 3 R  &lt 4 BACKSPACE  &sk RIGHT_SHIFT
             >;
         };
 
         type {
             label = "type";
             bindings = <
-       &kp Q    &kp Y      &kp O         &kp U     &kp EQUAL      &kp X      &kp L     &kp D         &kp W  &kp Z
-       &kp C    &kp I      &kp A         &kp E     &kp MINUS      &kp K      &kp H     &kp T         &kp N  &kp S
-&kp B  &kp SQT  &kp COMMA  &kp DOT       &kp SEMI  &kp FSLH       &kp J      &kp M     &kp G         &kp P  &kp V  &kp F
-                           &kp LEFT_GUI  &kp TAB   &lt 2 SPACE    &lt 3 RET  &kp BSPC  &kp LEFT_ALT
+       &kp Q    &kp Y      &kp O           &kp U        &kp EQUAL    &kp X    &kp L     &kp D            &kp W  &kp Z
+       &kp C    &kp I      &kp A           &kp E        &kp MINUS    &kp K    &kp H     &kp T            &kp N  &kp S
+&kp B  &kp SQT  &kp COMMA  &kp DOT         &kp SEMI     &kp FSLH     &kp J    &kp M     &kp G            &kp P  &kp V  &kp F
+                           &sk LEFT_SHIFT  &lt 5 ENTER  &kp SPACE    &lt 3 R  &kp BSPC  &sk RIGHT_SHIFT
             >;
         };
 
@@ -174,10 +184,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                &sys_reset   &bt BT_CLR  &out OUT_USB  &kp C_VOLUME_UP    &kp C_NEXT          &bt BT_SEL 0  &kp RG(C)  &kp RG(V)  &kp RC(C)  &kp RC(V)
-                &bootloader  &bt BT_NXT  &out OUT_TOG  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE    &bt BT_SEL 1  &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT
-&bt BT_CLR_ALL  &none        &bt BT_PRV  &out OUT_BLE  &kp C_MUTE         &kp C_PREV          &bt BT_SEL 2  &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &kp RG(RC(Q))
-                                         &trans        &trans             &trans              &mo 0         &kp KP_N0  &trans
+                &sys_reset   &bt BT_CLR  &out OUT_USB  &kp C_VOLUME_UP    &kp C_NEXT          &bt BT_SEL 0  &kp RG(C)     &kp RG(V)  &kp RC(C)  &kp RC(V)
+                &bootloader  &bt BT_NXT  &out OUT_TOG  &kp C_VOLUME_DOWN  &kp C_PLAY_PAUSE    &bt BT_SEL 1  &kp LEFT      &kp DOWN   &kp UP     &kp RIGHT
+&bt BT_CLR_ALL  &none        &bt BT_PRV  &out OUT_BLE  &kp C_MUTE         &kp C_PREV          &bt BT_SEL 2  &kp HOME      &kp PG_DN  &kp PG_UP  &kp END    &kp RG(RC(Q))
+                                         &trans        &trans             &trans              &bt BT_SEL 3  &bt BT_SEL 4  &to 1
             >;
         };
 
@@ -198,9 +208,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-           &kp COMMA      &kp LS(LBRC)  &kp LS(RBRC)   &kp SEMI      &kp LS(QMARK)    &kp EXCLAMATION  &kp LEFT_BRACKET  &kp LS(LPAR)  &kp LS(RPAR)  &kp RBKT
-           &kp LS(CARET)  &kp EQUAL     &kp LS(UNDER)  &kp LS(DLLR)  &kp LS(STAR)     &kp LS(DQT)      &kp BSPC          &kp TAB       &kp SPACE     &kp RET
-&kp POUND  &kp LS(LT)     &kp LS(PIPE)  &kp MINUS      &kp LS(GT)    &kp FSLH         &kp SQT          &kp AMPERSAND     &kp GRAVE     &kp TILDE     &kp PLUS  &kp BSLH
+           &kp COMMA      &kp LS(LBRC)  &kp LS(RBRC)   &kp SEMI      &kp LS(QMARK)    &kp EXCLAMATION  &kp LEFT_BRACKET  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RBKT
+           &kp LS(CARET)  &kp EQUAL     &kp LS(UNDER)  &kp LS(DLLR)  &kp LS(STAR)     &kp LS(DQT)      &kp BSPC          &kp TAB               &kp SPACE              &kp RET
+&kp POUND  &kp LS(LT)     &kp LS(PIPE)  &kp MINUS      &kp LS(GT)    &kp FSLH         &kp SQT          &kp AMPERSAND     &kp GRAVE             &kp TILDE              &kp PLUS  &kp BSLH
                                         &kp COLON      &kp AT_SIGN   &kp PERCENT      &trans           &trans            &trans
             >;
         };
