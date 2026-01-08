@@ -30,7 +30,7 @@
 
         combo_esc {
             timeout-ms = <100>;
-            key-positions = <10 0>;
+            key-positions = <14 25>;
             bindings = <&kp ESC>;
         };
 
@@ -48,7 +48,7 @@
 
         tab {
             bindings = <&kp TAB>;
-            key-positions = <19 9>;
+            key-positions = <15 26>;
             timeout-ms = <100>;
         };
     };
