@@ -35,34 +35,20 @@
             timeout-ms = <50>;
             key-positions = <14 25>;
             bindings = <&kp ESC>;
+            layers = <0>;
         };
 
         tab {
             bindings = <&kp TAB>;
             key-positions = <15 26>;
             timeout-ms = <50>;
+            layers = <0>;
         };
 
         caps {
             bindings = <&caps_word>;
             key-positions = <32 37>;
-        };
-    };
-
-    macros {
-        gif: gif {
-            label = "giphy";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp N2>,
-                <&macro_release>,
-                <&kp LSHFT>,
-                <&macro_tap>,
-                <&kp G &kp I &kp F>;
+            layers = <0>;
         };
     };
 
@@ -117,7 +103,7 @@
             &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp N7        &kp N8        &kp N9        &kp KP_PLUS
             &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp KP_MINUS
 &caps_word  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp KP_MULTIPLY  &trans
-                                   &trans    &trans     &trans      &mo ADJ   &kp KP_N0     &trans
+                                   &trans    &trans     &trans      &mo ADJ   &kp N0        &trans
             >;
         };
 
